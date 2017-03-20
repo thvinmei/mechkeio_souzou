@@ -1,0 +1,32 @@
+\documentclass[twocolumn,11pt]{jsarticle}
+
+%余白の設定
+\usepackage[top=25truemm,bottom=25truemm,left=20truemm,right=20truemm]{geometry}
+
+%文献参照の設定
+\bibliographystyle{jplain}
+
+#
+\setlength{\columnwidth}{80mm}
+\setlength{\baselineskip}{12pt}
+
+\setlength\intextsep{5pt}
+\setlength\textfloatsep{5pt}
+
+\makeatletter
+\def\mojiparline#1{
+\newcounter{mpl}
+\setcounter{mpl}{#1}
+\@tempdima=\linewidth
+\advance\@tempdima by-\value{mpl}zw
+\addtocounter{mpl}{-1}
+\divide\@tempdima by \value{mpl}
+\advance\kanjiskip by\@tempdima
+\advance\parindent by\@tempdima
+}
+
+\makeatother
+\def\linesparpage#1{
+\baselineskip=\textheight
+\divide\baselineskip by #1
+}
