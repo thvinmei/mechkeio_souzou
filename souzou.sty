@@ -1,18 +1,10 @@
-\documentclass[twocolumn,11pt]{jsarticle}
-
 %余白の設定
 \usepackage[top=25truemm,bottom=25truemm,left=20truemm,right=20truemm]{geometry}
 
-%文献参照の設定
-\bibliographystyle{jplain}
-
-#
+%段組み幅の設定
 \setlength{\columnwidth}{80mm}
-\setlength{\baselineskip}{12pt}
 
-\setlength\intextsep{5pt}
-\setlength\textfloatsep{5pt}
-
+% 一行あたり文字数の指定
 \makeatletter
 \def\mojiparline#1{
 \newcounter{mpl}
@@ -24,9 +16,19 @@
 \advance\kanjiskip by\@tempdima
 \advance\parindent by\@tempdima
 }
+\mojiparline{23}
 
+% 1ページあたり行数の指定
 \makeatother
 \def\linesparpage#1{
 \baselineskip=\textheight
 \divide\baselineskip by #1
 }
+\linesparpage{48}
+
+#図周りの余白設定
+\setlength\intextsep{5pt}
+\setlength\textfloatsep{5pt}
+
+%文献参照の設定
+\bibliographystyle{jplain}
